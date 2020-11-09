@@ -1504,6 +1504,44 @@
   resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-5.1.0.tgz#49265bbd4ff59b1cd20a385b5547f7c246cb1955"
   integrity sha512-z3JNWF7lP9WOzw1xBwul/HAOu4qC6EpK/8MkhjLNI9APvdYML82PWS1V0k0MiqA6Jk6uxm8DiVAk9VUqBa9/YA==
 
+"@material/floating-label@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@material/floating-label/-/floating-label-5.1.0.tgz#8d654b3f2ca98248e5a73a63feec8f4523c5ab4f"
+  integrity sha512-5EwPiBa5A4Q678tNWdkkBGDdSCDzudhVgBtRiA/7xRo4dHXiBxX5bhE+RHrF3ZQyEf6fsShspqwAFkTA1EaplQ==
+  dependencies:
+    "@material/animation" "^5.1.0"
+    "@material/base" "^5.1.0"
+    "@material/dom" "^5.1.0"
+    "@material/feature-targeting" "^5.1.0"
+    "@material/rtl" "^5.1.0"
+    "@material/theme" "^5.1.0"
+    "@material/typography" "^5.1.0"
+    tslib "^1.9.3"
+
+"@material/line-ripple@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@material/line-ripple/-/line-ripple-5.1.0.tgz#86cb1b8a91bf010231109211b8eb38ad059f5f23"
+  integrity sha512-esf2/ROZl1eVpyGCWPvxMSGVkuIOG5Fm6qufOLp7XIx5IL1O0bsm+bV6cVC4JCCtmNOag4GOBgkKKbkOvp/R6g==
+  dependencies:
+    "@material/animation" "^5.1.0"
+    "@material/base" "^5.1.0"
+    "@material/feature-targeting" "^5.1.0"
+    "@material/theme" "^5.1.0"
+    tslib "^1.9.3"
+
+"@material/notched-outline@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@material/notched-outline/-/notched-outline-5.1.0.tgz#4ec97001ed6bbb66f04100b7745ae99d19a4d16e"
+  integrity sha512-mQ3NjJR1jLXnJi6jhs20ftTf0yU1gWpYlyx1GizU0f7pLEqcIrFnw6G+pavcnKqP+JXNkzAQeGbmZvYBQnxokA==
+  dependencies:
+    "@material/base" "^5.1.0"
+    "@material/feature-targeting" "^5.1.0"
+    "@material/floating-label" "^5.1.0"
+    "@material/rtl" "^5.1.0"
+    "@material/shape" "^5.1.0"
+    "@material/theme" "^5.1.0"
+    tslib "^1.9.3"
+
 "@material/ripple@^5.1.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-5.1.0.tgz#6624e0ff7718d6bfa65fecd0bca4c03d2696c07b"
@@ -1528,6 +1566,26 @@
   dependencies:
     "@material/feature-targeting" "^5.1.0"
     "@material/rtl" "^5.1.0"
+
+"@material/textfield@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@material/textfield/-/textfield-5.1.0.tgz#75f68c62dc916116330a4c958ba3866c87bd6002"
+  integrity sha512-Vipvw75AXj4G/BGXv3DyrGozbvHxGtcNGig1e5pz1ERvcmZN5epLyGStznxEIZYNf0Q+6O/NwSRxZGgrdI2w8w==
+  dependencies:
+    "@material/animation" "^5.1.0"
+    "@material/base" "^5.1.0"
+    "@material/density" "^5.1.0"
+    "@material/dom" "^5.1.0"
+    "@material/feature-targeting" "^5.1.0"
+    "@material/floating-label" "^5.1.0"
+    "@material/line-ripple" "^5.1.0"
+    "@material/notched-outline" "^5.1.0"
+    "@material/ripple" "^5.1.0"
+    "@material/rtl" "^5.1.0"
+    "@material/shape" "^5.1.0"
+    "@material/theme" "^5.1.0"
+    "@material/typography" "^5.1.0"
+    tslib "^1.9.3"
 
 "@material/theme@^5.1.0":
   version "5.1.0"
@@ -1617,6 +1675,15 @@
     "@rmwc/ripple" "^6.1.4"
     "@rmwc/types" "^6.0.5"
 
+"@rmwc/floating-label@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@rmwc/floating-label/-/floating-label-6.1.4.tgz#02976c4685f8425e72c8a1725a5343ca2cde934a"
+  integrity sha512-X0FZGlh81VetIdiDapdSdB6JAhZRPBGXfHIzBd6F4y7ta4/V0kQo+Nv1kaq88jRMY/ROr6XwG7sMWDiM2joRrQ==
+  dependencies:
+    "@material/floating-label" "^5.1.0"
+    "@rmwc/base" "^6.1.4"
+    "@rmwc/types" "^6.0.5"
+
 "@rmwc/icon@^6.1.4":
   version "6.1.4"
   resolved "https://registry.yarnpkg.com/@rmwc/icon/-/icon-6.1.4.tgz#59ecfe641228b2f5d5d3ada7f22ff255bb9f9418"
@@ -1624,6 +1691,24 @@
   dependencies:
     "@rmwc/base" "^6.1.4"
     "@rmwc/provider" "^6.1.4"
+    "@rmwc/types" "^6.0.5"
+
+"@rmwc/line-ripple@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@rmwc/line-ripple/-/line-ripple-6.1.4.tgz#fa8cf24207aa1e45360ce9a36c20f644d7b0479b"
+  integrity sha512-lynjPp436hDrhspPFGzzqzUidsMS+D+zwSnH6G527Le7wEYjx13r2x3zCJ2tHVJWx6oxmJti+Y0QyvtPu0ehbQ==
+  dependencies:
+    "@material/line-ripple" "^5.1.0"
+    "@rmwc/base" "^6.1.4"
+    "@rmwc/types" "^6.0.5"
+
+"@rmwc/notched-outline@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@rmwc/notched-outline/-/notched-outline-6.1.4.tgz#479d77b698a2cd060b8802d9be0e50d864fe42b8"
+  integrity sha512-Q5INGaSwBu6ceARw/kLIBzsWKN99LICFPDVYL02eJaeOwgCRfuL1Y7ot3m7BA0Dnh7ggWFHkTXeIH8T5kqXEXw==
+  dependencies:
+    "@material/notched-outline" "^5.1.0"
+    "@rmwc/base" "^6.1.4"
     "@rmwc/types" "^6.0.5"
 
 "@rmwc/provider@^6.1.4":
@@ -1642,6 +1727,20 @@
     "@material/ripple" "^5.1.0"
     "@rmwc/base" "^6.1.4"
     "@rmwc/provider" "^6.1.4"
+    "@rmwc/types" "^6.0.5"
+
+"@rmwc/textfield@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@rmwc/textfield/-/textfield-6.1.4.tgz#158ab1e599f83b64d1a821228749e360c14b21f4"
+  integrity sha512-K3b/exjDnHe5Lw8y8gzZ8u6O1EKOFv3Xiz4vy47TzchzOaQRHT6n0D87nACz30K1jROuaFirsUFI5z1i1Nk+Lw==
+  dependencies:
+    "@material/textfield" "^5.1.0"
+    "@rmwc/base" "^6.1.4"
+    "@rmwc/floating-label" "^6.1.4"
+    "@rmwc/icon" "^6.1.4"
+    "@rmwc/line-ripple" "^6.1.4"
+    "@rmwc/notched-outline" "^6.1.4"
+    "@rmwc/ripple" "^6.1.4"
     "@rmwc/types" "^6.0.5"
 
 "@rmwc/types@^6.0.5":
