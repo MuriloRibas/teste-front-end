@@ -1,3 +1,12 @@
+# Executando
+~~~
+    Clone o repositório;
+    Entre no repositório local, e em /app;
+    Baixe as dependências com yarn ou npm;
+    Crie um .env dentro de /app com uma variável de ambiente chamada REACT_APP_API_KEY, tendo como valor a sua key da API;
+    Executar o script start, com npm ou yarn.
+~~~
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
