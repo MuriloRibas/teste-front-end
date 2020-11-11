@@ -41,6 +41,7 @@ export const Search = () => {
                             thumbnail={el.snippet.thumbnails.medium.url}
                             title={el.snippet.title}
                             description={el.snippet.description}
+                            channelTitle={el.snippet.channelTitle}
                         />
                     )}
                 </div>
