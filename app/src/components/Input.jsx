@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from '@rmwc/textfield';
+import { Icon } from '@rmwc/icon';
+
+import 'material-design-icons'
+import '@rmwc/icon/styles';
 import '@rmwc/textfield/styles';
 
 const Input = (props) => {
     return (
         <TextField 
+            outlined
+            icon="search"
             required
             placeholder="Pesquisar"
-            pattern="[^\W_]{1,}" 
+            pattern="^[\w ]+$" 
             value={props.value}
             onChange={props.setValue}   
         />
