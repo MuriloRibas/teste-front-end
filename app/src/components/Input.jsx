@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from '@rmwc/textfield';
-import { Icon } from '@rmwc/icon';
 
 import 'material-design-icons'
 import '@rmwc/icon/styles';
