@@ -4,10 +4,11 @@ import { Search } from './pages/search/index';
 import 'normalize.css';
 import 'animate.css'
 import './theme.css'
+import { App } from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Search />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

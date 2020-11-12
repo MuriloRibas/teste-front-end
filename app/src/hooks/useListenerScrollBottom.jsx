@@ -7,7 +7,6 @@ const useListenerScrollBottom = () => {
         function handleScroll() {
             const isOnBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight
     
-            console.log(isOnBottom)
             setIsBottom(isOnBottom)
         }
 
