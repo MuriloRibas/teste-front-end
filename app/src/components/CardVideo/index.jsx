@@ -50,7 +50,12 @@ const CardVideo = (props) => {
             </div>
             <CardActions className="container-card__actions-wrapper">
                 <CardActionButtons>
-                    <CardActionButton unelevated>Detalhes do Vídeo</CardActionButton>
+                    <CardActionButton 
+                        unelevated
+                        onClick={props.handleClickButton}
+                    >
+                        Detalhes do Vídeo
+                    </CardActionButton>
                 </CardActionButtons>
             </CardActions>
         </Card>
@@ -61,7 +66,8 @@ CardVideo.propTypes = {
     thumbnail: PropTypes.string,
     title: PropTypes.string,
     channelTitle: PropTypes.string,
-    description: PropTypes.string
+    description: PropTypes.string,
+    handleClickButton: PropTypes.func 
 }
 
 export default CardVideo

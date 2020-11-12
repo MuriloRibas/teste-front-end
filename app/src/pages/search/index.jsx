@@ -8,7 +8,7 @@ import CardVideo from '../../components/CardVideo';
 import useListenerScrollBottom from '../../hooks/useListenerScrollBottom';
 import Loading from '../../components/Loading';
 
-const Search = () => {
+const Search = (props) => {
     const [search, setSearch] = useState('')
     const [nextPageToken, setNextPageToke] = useState('')
     const [data, setData] = useState([])
@@ -40,6 +40,8 @@ const Search = () => {
             .catch(err => console.log(err) )
     }
 
+    const handleRedirect = (id) => props.history.push('/details/' + id)
+
     useEffect(() => {
         function checkScroll() {
             if (data.length > 0 && !loading && isBottom) return handleNewPageSearch()
@@ -49,21 +51,21 @@ const Search = () => {
     }, [isBottom])
 
     return (
-        <div className="container">
-            <form className={"container__form" + (data.length > 0 ? ' container__form--animated_top animate__animated animate__fadeInUp' : '')} onSubmit={handleSubmit}>
+        <div className="search-container">
+            <form className={"search-container__form" + (data.length > 0 ? ' search-container__form--animated_top animate__animated animate__fadeInUp' : '')} onSubmit={handleSubmit}>
                 <Input
                     value={search}
                     setValue={(e) => setSearch(e.target.value)}
                     fullWidth
                 />
                 <Button 
-                    className="container__button"
+                    className="search-container__button"
                     raised
                     label="Buscar"
                 />
             </form>
             {data.length > 0 &&
-                <div className="container__cardswrapper animate__animated animate__fadeInUp">
+                <div className="search-container__cardswrapper animate__animated animate__fadeInUp">
                     {data.map((el, i) => 
                         <CardVideo 
                             key={i}
@@ -71,6 +73,7 @@ const Search = () => {
                             title={el.snippet.title}
                             description={el.snippet.description}
                             channelTitle={el.snippet.channelTitle}
+                            handleClickButton={() => handleRedirect(el.id.videoId)}
                         />
                     )}
                 </div>
