@@ -8,7 +8,7 @@ import CardVideo from '../../components/CardVideo';
 import useListenerScrollBottom from '../../hooks/useListenerScrollBottom';
 import Loading from '../../components/Loading';
 
-export const Search = () => {
+const Search = () => {
     const [search, setSearch] = useState('')
     const [nextPageToken, setNextPageToke] = useState('')
     const [data, setData] = useState([])
@@ -79,3 +79,5 @@ export const Search = () => {
         </div>
     )
 }
+
+export default Search
