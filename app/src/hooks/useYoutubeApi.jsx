@@ -7,15 +7,13 @@ const useYoutubeApi = () => {
 
     const requestSearch = (q) => {
         const qWithoutWithespaces = q.split(' ').join('+')
-        const urlWithQueries = url + 'search?part=id,snippet&maxResults=6&q=' + qWithoutWithespaces + '&key=' + key
-        console.log(urlWithQueries)
+        const urlWithQueries = url + 'search?part=id,snippet&type=video&maxResults=6&q=' + qWithoutWithespaces + '&key=' + key
         return axios(urlWithQueries)
     } 
 
     const requestSearchByPage = (q, token) => {
         const qWithoutWithespaces = q.split(' ').join('+')
-        const urlWithQueries = url + 'search?part=id,snippet&maxResults=6&pageToken=' + token + '&q=' + qWithoutWithespaces + '&key=' + key
-        console.log(urlWithQueries)
+        const urlWithQueries = url + 'search?part=id,snippet&type=video&maxResults=6&pageToken=' + token + '&q=' + qWithoutWithespaces + '&key=' + key
         return axios(urlWithQueries)
     } 
 

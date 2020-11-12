@@ -8,18 +8,18 @@ import { IconButton } from '@rmwc/icon-button'
 import '@rmwc/icon-button/styles';
 import { Typography } from '@rmwc/typography';
 import '@rmwc/typography/styles';
+import Error from '../../components/Error/index';
 
 const Details = (props) => {
     const [data, setData] = useState({})
     const [error, setError] = useState(false)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const { id } = useParams();
     
     const { requestSearchById } = useYoutubeApi()
 
     const handleSearch = () => {
         setError(false)
-        setLoading(true)
         requestSearchById(id)
             .then(res => {
                 setLoading(false)
@@ -31,6 +31,29 @@ const Details = (props) => {
             })
     }
 
+    const handleRedirect = () => {
+        if (props.location.state && props.location.state.data) {
+            const { 
+                nextPageToken,
+                search,
+                data
+            } = props.location.state
+            
+            props.history.push(
+                { 
+                    pathname: '/',
+                    state: {
+                        nextPageToken,
+                        search,
+                        data
+                    }
+                }
+            )
+        } else {
+            props.history.push('/')
+        }
+    }
+
     useEffect(() => {
         handleSearch()
     }, [])
@@ -40,12 +63,13 @@ const Details = (props) => {
             
             { loading && <Loading/>}
 
-            { data.snippet !== undefined && 
+            { data && data.snippet !== undefined && 
                 <div className="details-container">
                     <div className="details-container__title">
                         <IconButton
                             icon="keyboard_arrow_left"
                             className="details-container__icon"
+                            onClick={handleRedirect}
                         />
                         <Typography
                             use="headline6"
@@ -71,6 +95,12 @@ const Details = (props) => {
                         views={data.statistics.viewCount}
                     />
                 </div>
+            }
+
+            { !loading && (!data || data.snippet) === undefined && 
+                <Error>
+                    Vídeo não encontrado.
+                </Error>
             }
         </>
     )
