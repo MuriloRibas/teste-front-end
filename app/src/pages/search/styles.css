@@ -1,29 +1,29 @@
-.container {
+.search-container {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height:100vh;
 }
-.container__form {
+.search-container__form {
     display: flex;
     align-items: center;
     justify-content:center;
 }
 
-.container__form--animated_top{
+.search-container__form--animated_top{
     position: absolute;
     top: 0;
     margin-top: 15px;
     width: 90%;
 }
 
-.container__button {
+.search-container__button {
     min-height: 56px;
     border-radius: 0px 4px 4px 0px;
 }
 
-.container__cardswrapper {
+.search-container__cardswrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -33,6 +33,6 @@
     background-color: whitesmoke;
 }
 
-.container__cardswrapper > * {
+.search-container__cardswrapper > * {
     margin: 15px ;
 }
