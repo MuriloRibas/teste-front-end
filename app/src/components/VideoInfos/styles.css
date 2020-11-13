@@ -34,3 +34,10 @@
 .videoinfos-container__views-wrapper :first-child {
     margin-right: 5px;
 }
+
+.videoinfos-container__like {
+    color: green;
+}
+.videoinfos-container__dislike {
+    color: red;
+}

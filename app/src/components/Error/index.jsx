@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon  } from '@rmwc/icon'
+import React from 'react';
+import { Icon } from '@rmwc/icon';
 
 const styles = {
     display: 'flex',
@@ -8,23 +8,21 @@ const styles = {
     alignItems: 'center',
     width: '300px',
     height: '200px',
-    textAlign: 'center'
-}
+    textAlign: 'center',
+};
 
-const Error = (props) => {
-    return (
-        <div style={styles}>
-            <Icon 
-                icon={{ 
-                    icon: 'sentiment_very_dissatisfied',
-                    size: 'xlarge'
-                }}    
-            />
-            {
-                props.children
-            }
-        </div>
-    )
-}
+const Error = ({ children }) => (
+    <div style={styles}>
+        <Icon
+            icon={{
+                icon: 'sentiment_very_dissatisfied',
+                size: 'xlarge',
+            }}
+        />
+        {
+            children
+        }
+    </div>
+);
 
-export default Error
+export default Error;

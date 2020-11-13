@@ -1,73 +1,76 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import { 
+import {
     Card,
     CardMedia,
     CardActions,
     CardActionButtons,
-    CardActionButton
+    CardActionButton,
 } from '@rmwc/card';
-import { Typography } from '@rmwc/typography'
+import { Typography } from '@rmwc/typography';
 import '@rmwc/card/styles';
 import '@rmwc/typography/styles';
 import './styles.css';
 
-const CardVideo = (props) => {
-    return (
-        <Card className="container-card">
-            <CardMedia
-                sixteenByNine
-                style={{
-                    backgroundImage: `url(${props.thumbnail})`
-                }}
-            />
-            <div className="container-card__content-wrapper">
-                    <Typography
-                        use="headline6"
-                        tag="h2"
-                    >
-                        <strong>
-                        { props.title }
-
-                        </strong>
-                    </Typography>
-                    <Typography
-                        use="body1"
-                        tag="h3"
-                    >
-                        <strong>
-                            { props.channelTitle }
-                        </strong>
-                    </Typography>
-                    <div>
-                        <Typography
-                            use="body2"
-                            tag="div"
-                        >
-                            { props.description }
-                        </Typography>
-                    </div>
+const CardVideo = ({
+    thumbnail,
+    title,
+    channelTitle,
+    description,
+    handleClickButton,
+}) => (
+    <Card className="container-card">
+        <CardMedia
+            sixteenByNine
+            style={{
+                backgroundImage: `url(${thumbnail})`,
+            }}
+        />
+        <div className="container-card__content-wrapper">
+            <Typography
+                use="headline6"
+                tag="h2"
+            >
+                <strong>
+                    { title }
+                </strong>
+            </Typography>
+            <Typography
+                use="body1"
+                tag="h3"
+            >
+                <strong>
+                    { channelTitle }
+                </strong>
+            </Typography>
+            <div>
+                <Typography
+                    use="body2"
+                    tag="div"
+                >
+                    { description }
+                </Typography>
             </div>
-            <CardActions className="container-card__actions-wrapper">
-                <CardActionButtons>
-                    <CardActionButton 
-                        unelevated
-                        onClick={props.handleClickButton}
-                    >
-                        Detalhes do Vídeo
-                    </CardActionButton>
-                </CardActionButtons>
-            </CardActions>
-        </Card>
-    )
-}
+        </div>
+        <CardActions className="container-card__actions-wrapper">
+            <CardActionButtons>
+                <CardActionButton
+                    unelevated
+                    onClick={handleClickButton}
+                >
+                    Detalhes do Vídeo
+                </CardActionButton>
+            </CardActionButtons>
+        </CardActions>
+    </Card>
+);
 
 CardVideo.propTypes = {
-    thumbnail: PropTypes.string,
-    title: PropTypes.string,
-    channelTitle: PropTypes.string,
-    description: PropTypes.string,
-    handleClickButton: PropTypes.func 
-}
+    thumbnail: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    channelTitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    handleClickButton: PropTypes.func.isRequired,
+};
 
-export default CardVideo
+export default CardVideo;
