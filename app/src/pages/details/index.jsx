@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import { useParams } from 'react-router-dom';
@@ -65,64 +67,49 @@ const Details = (props) => {
     }, []);
 
     return (
-        <>
+        <div className="details-container">
             { loading && <Loading />}
-
-            { data && data.snippet !== undefined
-                && (
-                    <div className="details-container">
-                        <div className="details-container__title">
-                            <IconButton
-                                icon="keyboard_arrow_left"
-                                className="details-container__icon"
-                                onClick={handleRedirect}
-                            />
-                            <Typography
-                                use="headline6"
-                                tag="h1"
-                            >
-                                {data.snippet.title}
-                            </Typography>
-                        </div>
-
-                        <iframe
-                            title={data.snippet.title}
-                            className="details-container__video"
-                            id="ytplayer"
-                            type="text/html"
-                            src={`http://www.youtube.com/embed/${data.id.videoId}`}
+            { data && data.snippet !== undefined && (
+                <>
+                    <div className="details-container__title">
+                        <IconButton
+                            icon="keyboard_arrow_left"
+                            className="details-container__icon"
+                            onClick={handleRedirect}
                         />
-
-                        <VideoInfos
-                            channel={data.snippet.channelTitle}
-                            description={data.snippet.description}
-                            likes={data.statistics.likeCount}
-                            dislikes={data.statistics.dislikeCount}
-                            views={data.statistics.viewCount}
-                        />
+                        <Typography
+                            use="headline6"
+                            tag="h1"
+                        >
+                            {data.snippet.title}
+                        </Typography>
                     </div>
-                )}
-            <div className="details-container__status-wrapper">
-                { noResults
-                    && (
-                        <Error>
-                            Vídeo não encontrado.
-                        </Error>
-                    )}
-                { error
-                    && (
-                        <Error>
-                            Ocorreu um erro.
-                        </Error>
-                    )}
-            </div>
-        </>
-    );
-};
 
-Details.propTypes = {
-    location: ReactRouterPropTypes.location.isRequired,
-    history: ReactRouterPropTypes.history.isRequired,
+                    <iframe
+                        title={data.snippet.title}
+                        className="details-container__video"
+                        id="ytplayer"
+                        type="text/html"
+                        src={`http://www.youtube.com/embed/${data.id.videoId}`}
+                    />
+
+                    <VideoInfos
+                        channel={data.snippet.channelTitle}
+                        description={data.snippet.description}
+                        likes={data.statistics.likeCount}
+                        dislikes={data.statistics.dislikeCount}
+                        views={data.statistics.viewCount}
+                    />
+                </>
+            )}
+            { !loading && (!data || data.snippet) === undefined
+                && (
+                    <Error>
+                        Vídeo não encontrado.
+                    </Error>
+                )}
+        </div>
+    );
 };
 
 export default Details;
