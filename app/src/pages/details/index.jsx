@@ -59,12 +59,12 @@ const Details = (props) => {
     }, [])
 
     return (
-        <>
+        <div className="details-container">
             
             { loading && <Loading/>}
 
             { data && data.snippet !== undefined && 
-                <div className="details-container">
+                <>
                     <div className="details-container__title">
                         <IconButton
                             icon="keyboard_arrow_left"
@@ -94,7 +94,7 @@ const Details = (props) => {
                         dislikes={data.statistics.dislikeCount}
                         views={data.statistics.viewCount}
                     />
-                </div>
+                </>
             }
 
             { !loading && (!data || data.snippet) === undefined && 
@@ -102,7 +102,7 @@ const Details = (props) => {
                     Vídeo não encontrado.
                 </Error>
             }
-        </>
+        </div>
     )
 }
 
