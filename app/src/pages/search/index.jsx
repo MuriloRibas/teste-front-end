@@ -137,6 +137,7 @@ const Search = (props) => {
                             ))}
                         </div>
                     )}
+                {loading && <Loading />}
                 {noResults
                     && (
                         <Error>
@@ -152,7 +153,6 @@ const Search = (props) => {
                         </Error>
                     )}
             </div>
-            {loading && <Loading />}
         </>
     );
 };
